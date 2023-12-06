@@ -1,4 +1,4 @@
-# datasette-enrichments-opencage
+# enrichments-gmap-geocode
 
 [![PyPI](https://img.shields.io/pypi/v/datasette-enrichments-opencage.svg)](https://pypi.org/project/datasette-enrichments-opencage/)
 [![Changelog](https://img.shields.io/github/v/release/datasette/datasette-enrichments-opencage?include_prereleases&label=changelog)](https://github.com/datasette/datasette-enrichments-opencage/releases)
