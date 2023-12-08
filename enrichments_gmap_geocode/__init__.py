@@ -100,8 +100,8 @@ class GmapGeocodeEnrichment(Enrichment):
             raise ValueError("No results found for {}".format(input))
         result = data["results"][0]
         update = {
-            "latitude": result["geometry"]["lat"],
-            "longitude": result["geometry"]["lng"],
+            "latitude": result["results"][0]["geometry"]["location"]["lat"],
+            "longitude": result["results"][0]["geometry"]["location"]["lng"],
         }
         if json_column:
             update[json_column] = json.dumps(data)
