@@ -101,7 +101,7 @@ class GmapGeocodeEnrichment(Enrichment):
         result = data["results"][0]
         update = {
             "latitude": result["results"][0]["geometry"]["location"]["lat"],
-            "longitude": result["results"][0]["geometry"]["location"]["lng"]
+            "longitude": result["results"][0]["geometry"]["location"]["lng"],
         }
         if json_column:
             update[json_column] = json.dumps(data)
