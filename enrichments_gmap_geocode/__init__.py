@@ -54,10 +54,10 @@ class GmapGeocodeEnrichment(Enrichment):
             )
 
         def stash_api_key(form, field):
-            if not hasattr(datasette, "_enrichments_gmaps_api_stashed_keys"):
-                datasette._enrichments_gmaps_api_stashed_keys = {}
+            if not hasattr(datasette, "_enrichments_gmap_geocode_stashed_keys"):
+                datasette._enrichments_gmap_geocode_stashed_keys = {}
             key = secrets.token_urlsafe(16)
-            datasette._enrichments_gmaps_api_stashed_keys[key] = field.data
+            datasette._enrichments_gmap_geocode_stashed_keys[key] = field.data
             field.data = key
 
         class ConfigFormWithKey(ConfigForm):
@@ -100,8 +100,8 @@ class GmapGeocodeEnrichment(Enrichment):
             raise ValueError("No results found for {}".format(input))
         result = data["results"][0]
         update = {
-            "latitude": result["results"][0]["geometry"]["location"]["lat"],
-            "longitude": result["results"][0]["geometry"]["location"]["lng"],
+            "latitude": result["geometry"]["location"]["lat"],
+            "longitude": result["geometry"]["location"]["lng"],
         }
         if json_column:
             update[json_column] = json.dumps(data)
@@ -128,6 +128,7 @@ def resolve_api_key(datasette, config):
     if not api_key_name:
         raise ApiKeyError("No API key reference found in config")
     # Look it up in the stash
+    #                          _enrichments_gmaps_api_stashed_keys
     if not hasattr(datasette, "_enrichments_gmap_geocode_stashed_keys"):
         raise ApiKeyError("No API key stash found")
     stashed_keys = datasette._enrichments_gmap_geocode_stashed_keys
