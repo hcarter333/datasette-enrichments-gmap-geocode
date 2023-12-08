@@ -29,4 +29,4 @@ enrichments_opencage = "enrichments_gmap_geocode"
 test = ["pytest", "pytest-asyncio", "pytest-httpx"]
 
 [tool.pytest.ini_options]
-asyncio_mode = "strict""
+asyncio_mode = "strict"
