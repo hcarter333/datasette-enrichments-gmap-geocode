@@ -68,7 +68,7 @@ This well give you a URL to sign in as the "root" user, which grants you access 
 
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:
 ```bash
-cd datasette-enrichments-opencage
+cd enrichments-gmap-geocode
 python3 -m venv venv
 source venv/bin/activate
 ```
