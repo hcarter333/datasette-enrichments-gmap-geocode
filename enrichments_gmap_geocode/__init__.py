@@ -91,7 +91,7 @@ class OpenCageEnrichment(Enrichment):
             input = input.replace("{{ %s }}" % key, str(value or "")).replace(
                 "{{%s}}" % key, str(value or "")
             )
-        params["q"] = input
+        params["address"] = input
         async with httpx.AsyncClient() as client:
             response = await client.get(url, params=params)
         response.raise_for_status()
