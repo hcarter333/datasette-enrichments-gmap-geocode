@@ -5,7 +5,7 @@
 [![Tests](https://github.com/datasette/datasette-enrichments-opencage/workflows/Test/badge.svg)](https://github.com/datasette/datasette-enrichments-opencage/actions?query=workflow%3ATest)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/datasette/datasette-enrichments-opencage/blob/main/LICENSE)
 
-Geocoding enrichment using OpenCage
+Geocoding enrichment using Google Maps API
 
 ## Installation
 
