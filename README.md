@@ -1,25 +1,23 @@
 # enrichments-gmap-geocode
 
-[![PyPI](https://img.shields.io/pypi/v/datasette-enrichments-opencage.svg)](https://pypi.org/project/datasette-enrichments-opencage/)
-[![Changelog](https://img.shields.io/github/v/release/datasette/datasette-enrichments-opencage?include_prereleases&label=changelog)](https://github.com/datasette/datasette-enrichments-opencage/releases)
-[![Tests](https://github.com/datasette/datasette-enrichments-opencage/workflows/Test/badge.svg)](https://github.com/datasette/datasette-enrichments-opencage/actions?query=workflow%3ATest)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/datasette/datasette-enrichments-opencage/blob/main/LICENSE)
+
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/datasette/enrichments-gmap-geocode/blob/main/LICENSE)
 
 Geocoding enrichment using Google Maps API
-
+Everything in this repository is a refinement of the [OpenCage](https://datasette.io/plugins/datasette-enrichments-opencage) repository adapted to use Google Maps instead
 ## Installation
 
 Install this plugin in the same environment as Datasette.
 ```bash
-datasette install datasette-enrichments-opencage
+datasette install enrichments-gmap-geocode
 ```
 ## Usage
 
-This plugin adds an enrichment for geocoding using the [OpenCage Geocoder](https://opencagedata.com/).
+This plugin adds an enrichment for geocoding using the [Google Maps Geocoder](https://developers.google.com/maps/documentation/geocoding/overview).
 
-You will need an API key from OpenCage - you can sign up for a free trial at https://opencagedata.com/users/sign_up.
+You will need an API key from Google Maps - you can sign up for a key that includes free usage that's fairly large [Google Maps API Key](https://developers.google.com/maps/documentation/geocoding/get-api-key).
 
-Filter for data that you wish to geocode, then apply the OpenCage geocoder enrichment.
+Filter for data that you wish to geocode, then apply the Google Maps API geocoder enrichment.
 
 You'll need to specify a template to be passed to the geocoder, specifying which templates should be used as the input.
 
@@ -35,22 +33,23 @@ If your address column is missing the country, but all of the addresses are in t
 
     {{ address }}, USA
 
-See the [OpenCage guide](https://opencagedata.com/guides/how-to-format-your-geocoding-query) for tips on how to get the best results.
+See the Googlel Maps Geocoding [docs](https://developers.google.com/maps/documentation/geocoding/requests-geocoding) for tips on how to get the best results.
 
 By default only the latitude and longitude from the geocoder will be stored, in the `latitude` and `longitude` columns on your table. These columns will be created if they do not yet exist.
 
 You can optionally specify a column to store the full JSON output of the geocoder. This column will also be created if it does not exist.
 
-The full JSON format is [described here](https://opencagedata.com/api#response).
+The full JSON format is [described here](https://developers.google.com/maps/documentation/geocoding/requests-geocoding#json).
 
 ## Configuration
 
 You can use this plugin without configuration, but you'll need to enter your API key every time you run an enrichment.
 
 To avoid that, you can set your API key as plugin configuration like this:
-
+### The following doesn't work yet
 ```bash
-export OPENCAGE_API_KEY="your-api-key"
+Needs to be changed to Google Maps
+export GMAPS_API_KEY="your-api-key"
 ```
 Then in `metadata.yml`:
 ```yaml
