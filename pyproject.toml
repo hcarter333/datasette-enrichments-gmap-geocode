@@ -23,7 +23,7 @@ Issues = "https://github.com/datasette/datasette-enrichments-opencage/issues"
 CI = "https://github.com/datasette/datasette-enrichments-opencage/actions"
 
 [project.entry-points.datasette]
-enrichments_gmap_geocode = "datasette_enrichments_gmap_geocode"
+datasette_enrichments_gmap_geocode = "datasette_enrichments_gmap_geocode"
 
 [project.optional-dependencies]
 test = ["pytest", "pytest-asyncio", "pytest-httpx"]
