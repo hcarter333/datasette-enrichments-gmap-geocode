@@ -81,5 +81,6 @@ To run the tests:
 pytest
 ```
 Command for testing with freedraw  
-```python3 -m datasette gm_test.db --metadata qso_loc.yml --load-extension=/usr/lib/x86_64-linux-gnu/mod_spatialite.so --template-dir plugins/templates --root
+```bash
+python3 -m datasette gm_test.db --metadata qso_loc.yml --load-extension=/usr/lib/x86_64-linux-gnu/mod_spatialite.so --template-dir plugins/templates --root
 ```
