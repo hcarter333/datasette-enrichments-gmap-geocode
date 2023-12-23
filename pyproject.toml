@@ -1,5 +1,5 @@
 [project]
-name = "enrichments-gmap-geocode"
+name = "datasette-enrichments-gmap-geocode"
 version = "0.1"
 description = "Geocoding enrichment using Google Maps API"
 readme = "README.md"
@@ -17,10 +17,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/datasette/datasette-enrichments-opencage"
-Changelog = "https://github.com/datasette/datasette-enrichments-opencage/releases"
-Issues = "https://github.com/datasette/datasette-enrichments-opencage/issues"
-CI = "https://github.com/datasette/datasette-enrichments-opencage/actions"
+Homepage = "https://github.com/datasette/datasette-enrichments-gmap-geocode"
+Changelog = "https://github.com/datasette/datasette-enrichments-gmap-geocode/releases"
+Issues = "https://github.com/datasette/datasette-enrichments-gmap-geocode/issues"
+CI = "https://github.com/datasette/datasette-enrichments-gmap-geocode/actions"
 
 [project.entry-points.datasette]
 datasette_enrichments_gmap_geocode = "datasette_enrichments_gmap_geocode"
