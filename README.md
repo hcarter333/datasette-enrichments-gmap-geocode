@@ -56,7 +56,7 @@ Then in `metadata.yml`:
 plugins:
   datasette-enrichments-opencage:
     api_key:
-      $env: OPENCAGE_API_KEY
+      $env: MAPS_API_KEY
 ```
 Then run Datasette like this:
 ```bash
