@@ -22,7 +22,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -e '.[test]'
-        datasette install datasette-enrichments-gmap-geocode
     - name: Run tests
       run: |
-        pytest
+        pytest -v -vv
