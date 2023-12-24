@@ -9,7 +9,7 @@ import sqlite_utils
 def non_mocked_hosts():
     # This ensures httpx-mock will not affect Datasette's own
     # httpx calls made in the tests by datasette.client:
-    return ["localhost"]
+    return ["localhost:8001"]
 
 
 @pytest.mark.asyncio
