@@ -53,9 +53,15 @@ async def test_enrichment(tmpdir, api_key_from_config, store_json_column, httpx_
     cookies["ds_csrftoken"] = csget.cookies["ds_csrftoken"]
 #    csrftoken = (
 #        await datasette.client.get("/-/enrich/data/addresses/gm_api_geocoder", cookies=cookies)
+<<<<<<< Updated upstream
 #    ).cookies["csrftoken"]
 #    cookies["ds_csrftoken"] = csrftoken
 #    print("cookies is " + str(cookies))
+=======
+#    ).cookies["ds_csrftoken"]
+#    print("post is " + str(post))
+    #cookies["ds_csrftoken"] = csrftoken
+>>>>>>> Stashed changes
 
     post = {
         "input": "{{ address }}",
@@ -65,7 +71,6 @@ async def test_enrichment(tmpdir, api_key_from_config, store_json_column, httpx_
         post["api_key"] = "abc123"
     if store_json_column:
         post["json_column"] = "details"
-
     response = await datasette.client.post(
         "/-/enrich/data/addresses/gm_api_geocoder",
         data=post,
