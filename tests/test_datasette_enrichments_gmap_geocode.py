@@ -58,6 +58,7 @@ async def test_enrichment(tmpdir, api_key_from_config, store_json_column, httpx_
         post["api_key"] = "abc123"
     if store_json_column:
         post["json_column"] = "details"
+    print("post is " + str(post))
 
     response = await datasette.client.post(
         "/-/enrich/data/addresses/gm_api_geocoder",
