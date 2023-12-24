@@ -47,7 +47,7 @@ async def test_enrichment(tmpdir, api_key_from_config, store_json_column, httpx_
     cookies = {"ds_actor": datasette.sign({"a": {"id": "root"}}, "actor")}
     csrftoken = (
         await datasette.client.get("/-/enrich/data/addresses/gm_api_geocoder", cookies=cookies)
-    ).cookies["ds_csrftoken"]
+    ).cookies["csrftoken"]
     cookies["ds_csrftoken"] = csrftoken
     print("cookies is " + str(cookies))
 
