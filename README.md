@@ -1,4 +1,4 @@
-# enrichments-gmap-geocode
+# datasette-enrichments-gmap-geocode
 
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/datasette/enrichments-gmap-geocode/blob/main/LICENSE)
@@ -9,7 +9,7 @@ Everything in this repository is a refinement of the [OpenCage](https://datasett
 
 Install this plugin in the same environment as Datasette.
 ```bash
-datasette install enrichments-gmap-geocode
+datasette install datasette-enrichments-gmap-geocode
 ```
 ## Usage
 
@@ -68,7 +68,7 @@ This well give you a URL to sign in as the "root" user, which grants you access 
 
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:
 ```bash
-cd enrichments-gmap-geocode
+cd datasette-enrichments-gmap-geocode
 python3 -m venv venv
 source venv/bin/activate
 ```
