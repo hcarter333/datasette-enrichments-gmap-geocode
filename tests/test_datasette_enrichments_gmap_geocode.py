@@ -9,7 +9,7 @@ import sqlite_utils
 def non_mocked_hosts():
     # This ensures httpx-mock will not affect Datasette's own
     # httpx calls made in the tests by datasette.client:
-    return ["127.0.0.1"]
+    return ["localhost"]
 
 
 @pytest.mark.asyncio
@@ -48,6 +48,7 @@ async def test_enrichment(tmpdir, api_key_from_config, store_json_column, httpx_
     csget = (
         await datasette.client.get("/-/enrich/data/addresses/gm_api_geocoder", cookies=cookies)
     )
+    print(str(csget))
     print(str(csget.cookies))
     cookies["ds_csrftoken"] = csget.cookies["ds_csrftoken"]
 #    csrftoken = (
