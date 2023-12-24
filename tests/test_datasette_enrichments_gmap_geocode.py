@@ -3,8 +3,7 @@ from datasette_enrichments.utils import wait_for_job
 import pytest
 import re
 import sqlite_utils
-#originally created as https://github.com/datasette/datasette-enrichments-opencage/tree/6249f12d46b915e0070eb14ac19f4e66a311776a/tests
-#by Simon Willison
+
 
 @pytest.fixture
 def non_mocked_hosts():
@@ -17,7 +16,6 @@ def non_mocked_hosts():
 @pytest.mark.parametrize("api_key_from_config", (True, False))
 @pytest.mark.parametrize("store_json_column", (True, False))
 async def test_enrichment(tmpdir, api_key_from_config, store_json_column, httpx_mock):
-    #New structure: ["geometry"]["location"]["lat"]
     httpx_mock.add_response(
         url=re.compile(r"https://maps.googleapis.com/maps/api/geocode/json.*"),
         method="GET",

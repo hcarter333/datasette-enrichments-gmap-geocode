@@ -70,7 +70,7 @@ class GmapGeocodeEnrichment(Enrichment):
                 ],
             )
 
-        plugin_config = datasette.plugin_config("enrichments-gmap-geocode") or {}
+        plugin_config = datasette.plugin_config("datasette-enrichments-gmap-geocode") or {}
         api_key = plugin_config.get("api_key")
 
         return ConfigForm if api_key else ConfigFormWithKey
@@ -119,7 +119,7 @@ class ApiKeyError(Exception):
 
 
 def resolve_api_key(datasette, config):
-    plugin_config = datasette.plugin_config("enrichments-gmap-geocode") or {}
+    plugin_config = datasette.plugin_config("datasette-enrichments-gmap-geocode") or {}
     api_key = plugin_config.get("api_key")
     if api_key:
         return api_key
@@ -129,9 +129,9 @@ def resolve_api_key(datasette, config):
         raise ApiKeyError("No API key reference found in config")
     # Look it up in the stash
     #                          datasette_enrichments_gmaps_api_stashed_keys
-    if not hasattr(datasette, "datasette_enrichments_gmap_geocode_stashed_keys"):
+    if not hasattr(datasette, "_enrichments_gmap_geocode_stashed_keys"):
         raise ApiKeyError("No API key stash found")
-    stashed_keys = datasette.datasette_enrichments_gmap_geocode_stashed_keys
+    stashed_keys = datasette._enrichments_gmap_geocode_stashed_keys
     if api_key_name not in stashed_keys:
         raise ApiKeyError("No API key found in stash for {}".format(api_key_name))
     return stashed_keys[api_key_name]
