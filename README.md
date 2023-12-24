@@ -46,15 +46,15 @@ The full JSON format is [described here](https://developers.google.com/maps/docu
 You can use this plugin without configuration, but you'll need to enter your API key every time you run an enrichment.
 
 To avoid that, you can set your API key as plugin configuration like this:
-### The following doesn't work yet
+
 ```bash
-Needs to be changed to Google Maps
-export GMAPS_API_KEY="your-api-key"
+
+export MAPS_API_KEY="your-api-key"
 ```
 Then in `metadata.yml`:
 ```yaml
 plugins:
-  datasette-enrichments-opencage:
+  datasette-enrichments-gmap-geocode:
     api_key:
       $env: MAPS_API_KEY
 ```
