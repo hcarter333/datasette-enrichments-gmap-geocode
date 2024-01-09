@@ -1,7 +1,9 @@
 # datasette-enrichments-gmap-geocode
 
-
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/datasette/enrichments-gmap-geocode/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/datasette-enrichments-gmap-geocode.svg)](https://pypi.org/project/datasette-enrichments-gmap-geocode/)
+[![Changelog](https://img.shields.io/github/v/release/hcarter333/datasette-enrichments-gmap-geocode?include_prereleases&label=changelog)](https://github.com/hcarter333/datasette-enrichments-gmap-geocode/releases)
+[![Tests](https://github.com/hcarter333/datasette-enrichments-gmap-geocode/workflows/Test/badge.svg)](https://github.com/hcarter333/datasette-enrichments-gmap-geocode/actions?query=workflow%3ATest)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/hcarter333/enrichments-gmap-geocode/blob/main/LICENSE)
 
 Geocoding enrichment using Google Maps API
 Everything in this repository is a refinement of the [OpenCage](https://datasette.io/plugins/datasette-enrichments-opencage) repository adapted to use Google Maps instead
