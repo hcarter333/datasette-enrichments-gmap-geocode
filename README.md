@@ -78,6 +78,10 @@ Now install the dependencies and test dependencies:
 ```bash
 pip install -e '.[test]'
 ```
+Unless you're on windows, and then you'll use 
+```bash
+pip install -e .[test]
+```
 To run the tests:
 ```bash
 pytest
