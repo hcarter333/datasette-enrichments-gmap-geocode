@@ -29,7 +29,7 @@ If you have a single column containing the address, you can use this:
 
 If you have separate columns for the street, city, state and country, you can use this:
 
-    {{ street }}, {{ city }}, {{ state }}, {{ country }}
+    {{ street }}, {{ city }}, {{ state }}, {{ country  }}
 
 If your address column is missing the country, but all of the addresses are in the USA, you could use this:
 
